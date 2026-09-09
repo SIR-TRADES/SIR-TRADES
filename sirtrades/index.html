@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KIU student and staff registration portal." />
+  <title>KIU Connect | Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+    <header class="public-header">
+      <a class="brand" href="#register" aria-label="KIU Connect home"><span class="brand-mark">K</span><span><strong>KIU</strong><small>CONNECT</small></span></a>
+      <nav class="top-nav" aria-label="Portal navigation"><a class="active" href="#register">Registration</a><a href="#dashboard">Admin portal <span class="arrow">-&gt;</span></a></nav>
+    </header>
+    <main>
+      <section class="registration-view view" id="register-view">
+        <div class="registration-intro"><p class="eyebrow">KIU community access</p><h1>Join the campus<br /><em>connected.</em></h1><p class="intro-copy">Register your details once and the student administration team will verify your profile before you access campus services.</p><div class="trust-row"><span class="trust-icon">✓</span><span>Your information is reviewed by KIU administrators</span></div><div class="intro-note"><span>01</span><div><strong>One registration</strong><p>Students, teaching staff and support staff can all apply from this page.</p></div></div></div>
+        <div class="form-card"><div class="form-card-heading"><div><p class="eyebrow">New profile</p><h2>Register with KIU</h2></div><span class="secure-badge">Secure intake</span></div><div class="role-switch" role="tablist" aria-label="Registration type"><button class="role-tab active" data-role="Student" role="tab" aria-selected="true">Student</button><button class="role-tab" data-role="Staff" role="tab" aria-selected="false">Staff</button></div><form id="registrationForm"><input type="hidden" id="registrationRole" value="Student" /><div class="form-grid"><label>Full name<input id="fullName" name="fullName" type="text" placeholder="e.g. Amina Namusoke" required /></label><label>Email address<input id="email" name="email" type="email" placeholder="you@example.com" required /></label></div><div class="form-grid"><label>Phone number<input id="phone" name="phone" type="tel" placeholder="+256 700 000 000" required /></label><label id="studentIdField">Student number<input id="studentId" name="studentId" type="text" placeholder="e.g. 2026/CS/0142" required /></label><label id="staffIdField" class="hidden">Staff number<input id="staffId" name="staffId" type="text" placeholder="e.g. KIU/STAFF/0142" /></label></div><div class="form-grid"><label id="programmeField">Programme<select id="programme" name="programme"><option value="">Select programme</option><option>Computer Science</option><option>Business Administration</option><option>Information Technology</option><option>Mass Communication</option><option>Education</option></select></label><label id="departmentField" class="hidden">Department<select id="department" name="department"><option value="">Select department</option><option>Academic Affairs</option><option>Student Affairs</option><option>Finance</option><option>ICT Services</option><option>Library Services</option></select></label><label>Campus<select id="campus" name="campus" required><option value="">Select campus</option><option>Main Campus</option><option>Western Campus</option><option>Online</option></select></label></div><label class="consent"><input id="consent" type="checkbox" required /><span>I confirm that the information provided is accurate and may be used for verification.</span></label><button class="button button-primary full-width" type="submit">Submit for verification <span class="arrow">-&gt;</span></button><p class="form-message" id="registrationMessage" role="status"></p></form></div>
+      </section>
+      <section class="admin-view view hidden" id="dashboard-view"><div class="admin-heading"><div><p class="eyebrow">Student administration</p><h1>Verification centre</h1><p class="intro-copy">Review new registrations before they become active KIU profiles.</p></div><a class="button button-primary" href="#register">+ New registration</a></div><div class="stats-grid"><article class="stat-card"><span class="stat-icon amber">!</span><div><span>Awaiting review</span><strong id="pendingCount">0</strong><small>New submissions</small></div></article><article class="stat-card"><span class="stat-icon green">✓</span><div><span>Verified profiles</span><strong id="verifiedCount">0</strong><small>Ready for access</small></div></article><article class="stat-card"><span class="stat-icon blue">#</span><div><span>Students</span><strong id="studentCount">0</strong><small>Registered applicants</small></div></article><article class="stat-card"><span class="stat-icon coral">+</span><div><span>Staff</span><strong id="staffCount">0</strong><small>Registered applicants</small></div></article></div><section class="panel verification-panel"><div class="panel-heading"><div><p class="eyebrow">Live intake</p><h2>Registration requests</h2></div><select id="requestFilter" aria-label="Filter registration requests"><option value="all">All requests</option><option value="Pending">Pending review</option><option value="Verified">Verified</option><option value="Rejected">Rejected</option></select></div><div id="requestList" class="request-list"></div></section></section>
+    </main>
+    <footer class="site-footer"><span>KIU Connect</span><span>Created with care by <strong>Sir Trades</strong></span><span>Academic year 2026/27</span></footer>
+  </div>
+  <script src="api-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
